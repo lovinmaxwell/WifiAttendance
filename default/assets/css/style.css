@@ -61,7 +61,7 @@ File: Components
   border-radius: 0;
   margin-bottom: 0;
   padding: 0 10px;
-  margin-left: 240px;
+  margin-left:0px;
   min-height: 70px; }
   .navbar-custom .nav-link {
     padding: 0;

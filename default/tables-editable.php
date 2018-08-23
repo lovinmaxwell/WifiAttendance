@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
-    
-<!-- Mirrored from coderthemes.com/adminox_1.1/b4/default/dashboard-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Jun 2017 11:39:42 GMT -->
-<head>
+    <head>
         <meta charset="utf-8" />
-        <title>Adminox - Responsive Web App Kit</title>
+        <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -35,13 +33,6 @@
             <!-- Top Bar Start -->
             <div class="topbar">
 
-                <div class="topbar-left">
-                                <span>
-                                    <img src="assets/images/logo.jpg" alt="" height="70" width="239">
-                                </span>
-                        
-                </div>
-
                 <nav class="navbar-custom">
 
                     
@@ -62,14 +53,11 @@
                         <ul class="metismenu" id="side-menu">
                            <!-- <li class="menu-title">Navigation</li>-->
                             <li>
-                                <a href="javascript: void(0);">
-                                    <a href="dashboard-2.html"><i class="fi-air-play"></i><span class="badge badge-success pull-right"></span><span> Dashboard </span></a>
-                                </a>
+                              
+                                <a href="dashboard-2.html"><i class="fi-air-play"></i><span> Dashboard </span></a>
                             </li>
-                            <li>
-                            
-                            <li>
-                                <a href="javascript: void(0);"><a href="tables-layout2.php"><i class="fi-layout"></i> <span> EMPLOYEE </span> <span class="menu-arrow"></span></a>
+							<li>
+                                <a href="tables-layout2.php"><i class="fi-layout"></i> <span> EMPLOYEE </span> </a>
        
                             </li>
 
@@ -85,6 +73,7 @@
 
             </div>
             <!-- Left Sidebar End -->
+
 
             <!-- ============================================================== -->
             <!-- Start right Content here -->
@@ -148,8 +137,9 @@
 
 
 
+       
        <?php
-$selectdate="CURDATE()" ;
+$selectdate=date("Y/m/d") ;
 $link=mysqli_connect("localhost","ellipson_lovin","LOVINm2xwell");
 mysqli_select_db($link,"ellipson_wifi");
 
@@ -160,19 +150,19 @@ $Result=mysqli_query($link,$sql);
 
  
 ?>
+<?php while($rows = mysqli_fetch_array($Result)):?>
 
-  <?php while($rows = mysqli_fetch_array($Result)):?>
-	<tbody>
      <tr>
-     <td bgcolor="#Fdf5e6"><b><font  color='#000080'>  <?php echo $rows['ID'];?>   </font></b></td>
+     <td bgcolor="#Fdf5e6"><b><font color='#000080'>  <?php echo $rows['ID'];?>   </font></b></td>
      <td bgcolor="#Fdf5e6"><b><font color='#000080'>  <?php echo $rows['employee_name'];?> </font></b></td>
 	  <td bgcolor="#Fdf5e6"><b><font color='#000080'>  <?php echo $rows['check_in'];?>   </font></b></td>
      <td bgcolor="#Fdf5e6"><b><font color='#000080'>  <?php echo $rows['check_out'];?> </font></b></td>
-	  <td bgcolor="#Fdf5e6"><b><font color='#000080'><a href="map.php">details  </font></b></td>
-     
+	  <td bgcolor="#Fdf5e6"><b><font color='#000080'>  <a href="country.php?id=$rows['MAC_ID']">deatails</a></b></td>
+
 	 </tr>
  
  <?php endwhile;?>
+
 </tbody>
 </table>
     </body>
