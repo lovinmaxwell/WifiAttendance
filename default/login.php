@@ -1,53 +1,30 @@
-<!DOCTYPE html>
-<html >
-<head>
-  <meta charset="UTF-8">
-  <title>Simple HTML & CSS Login Form</title>
-  
-  
-  
-      <link rel="stylesheet" href="css1/style.css">
-<script src="jquery.min.js" type="text/javascript"></script>
-  
-    <script src="js/index.js"></script>
-  
-</head>
 <?php
-
-$username = $_POST['username'];
-$password = $_POST['password'];
+session_start(); // Starting Session
+$error=''; // Variable To Store Error Message
+if (isset($_POST['submit'])) {
+if (empty($_POST['username']) || empty($_POST['password'])) {
+$error = "Username or Password is invalid";
+}
+else
+{
+// Define $username and $password
+$username=$_POST['username'];
+$password=$_POST['password'];
+// Establishing Connection with Server by passing server_name, user_id and password as a parameter
 
 $link=mysqli_connect("localhost","ellipson_lovin","LOVINm2xwell");
-mysqli_select_db($link,"ellipson_wifi");
+		mysqli_select_db($link,"ellipson_wifi");
 
-$sql="SELECT * FROM users WHERE Username ='$username' AND Password ='$password' ";
-$result=mysqli_query($link,$sql);
-$numrows = mysqli_num_rows($result);
-if($numrows > 0)
-   {
-    header("Location:dashboard-2.html");
-   }
-else
-	echo 'sing in';
+		$sql="SELECT *from users where password='$password' AND username='$username'";
+		$result=mysqli_query($link,$sql);
+		$rows = mysqli_num_rows($result);
+if ($rows == 1) {
+$_SESSION['login_user']=$username; // Initializing Session
+header("location:dashboard-2.php"); // Redirecting To Other Page
+} else {
+$error = "Username or Password is invalid";
+}
+mysqli_close($link); // Closing Connection
+}
+}
 ?>
-<body>
-  
-
-<form method="post">
-<div class="box">
-<h1>LOGIN</h1>
-
-<input type="name" name="username" value="" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
-  
-<input type="password" name="password" value="" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
-  
-<div class="btn" ><button type="submit" value="" onclick="location.href='index.php';">Sign in</div></button><!-- End Btn -->
-  
-</div> <!-- End Box -->
-  
-</form>
-  
-
-	
-</body>
-</html>
