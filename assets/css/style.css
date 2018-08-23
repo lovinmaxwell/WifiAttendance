@@ -203,6 +203,8 @@ section.box.marginBottom0,
 /* =============
    Buttons
 ============= */
+
+
 .button-list {
   margin-left: -8px;
   margin-bottom: -12px; }
@@ -8399,4 +8401,33 @@ table.dataTable tfoot th select, table.dataTable tfoot td select{
 
 table.dataTable.display tbody tr:first-child td {
     border-top: 1px solid #eeeeee;
+}
+table.format td th {
+    padding: 3px 10px;  
+    text-align: center;
+    color: #333;
+    font-size:10pt;
+}
+
+@media screen and (max-width:480px){
+   table.format td th {
+     font-size:16pt; 
+   }
+}
+
+
+@media screen and (max-width:1024px){
+   table.format td th {
+     font-size:12pt; 
+   }
+}
+
+
+@media screen and (max-width:1920px){
+   table.format td th{
+     font-size:10pt; 
+   }
+}
+th td{
+	font-size:10vm;
 }

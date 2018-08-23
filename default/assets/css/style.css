@@ -1342,27 +1342,9 @@ a:focus {
 /* =============
    Buttons
 ============= */
-.btn {
-  border-radius: 2px;
-  font-size: 14px;
-  padding: 7px 14px;
-  outline: none !important;
-  font-family: "Nunito Sans", sans-serif; }
 
-.btn-md {
-  padding: 9px 18px; }
 
-.btn-group-lg > .btn, .btn-lg {
-  padding: 12px 20px !important;
-  font-size: 18px; }
 
-.btn-group-sm > .btn, .btn-sm {
-  padding: 5px 10px !important;
-  font-size: 14px; }
-
-.btn-group-xs > .btn, .btn-xs {
-  padding: 1px 5px !important;
-  font-size: 12px; }
 
 .btn-group.open .dropdown-toggle {
   -webkit-box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.1) inset;
@@ -5364,13 +5346,16 @@ File: Responsive
 /* Container-alt */
 @media (min-width: 768px) {
   .container-alt {
-    width: 750px; } }
+    width: 750px;
+		font-size:10px;} }
 @media (min-width: 992px) {
   .container-alt {
-    width: 970px; } }
+    width: 970px;
+font-size:14px;	} }
 @media (min-width: 1200px) {
   .container-alt {
-    width: 1170px; } }
+    width: 1170px;
+		font-size:16px;} }
 @media (max-width: 419px) {
   .hidden-xxs {
     display: none; }
@@ -5385,8 +5370,8 @@ File: Responsive
     display: none !important; }
 
   .content-page {
-    margin-left: 70px; }
-
+    margin-left: 70px;
+	font-size:8px; }
   .forced .side-menu.left {
     box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1); }
 

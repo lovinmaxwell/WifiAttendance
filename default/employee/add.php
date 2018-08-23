@@ -4,6 +4,7 @@
 $id=$_POST['id'];
 $device1=$_POST['device1'] ;
 $name=$_POST['name'] ;
+$selectdate=date("Y/m/d") ;
 $category=$_POST['category'] ;
 $department=$_POST['department'] ;
 

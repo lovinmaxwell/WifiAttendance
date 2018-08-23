@@ -1,0 +1,11 @@
+<?php echo '<a href="' . htmlspecialchars("record.php?id=".html_entity_decode($pid)) .'&dat=' . urlencode($selectdate). '">';?>
+
+
+
+
+
+	  <!--<td bgcolor="#Fdf5e6"><b><font color='#000080'>  <?php echo '<a href="' . htmlspecialchars("record.php?id=".html_entity_decode($pid)) .'&dat=' . html_entity_decode($selectdate). '">';?> details </a></font></b></td>-->
+	  
+	  
+	  
+	   <?php echo '<a href="' . htmlspecialchars("presentdatedetails.php?id=".html_entity_decode($pid)) .'&dat=' . html_entity_decode($selectdate). '">';?>
